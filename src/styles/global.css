@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  /* Preston Speaking Club Brand Colors */
+  --color-preston-blue-50: #e6e6f5;
+  --color-preston-blue-100: #b3b3e0;
+  --color-preston-blue-200: #8080cc;
+  --color-preston-blue-300: #4d4db8;
+  --color-preston-blue-400: #2626a3;
+  --color-preston-blue-500: #020665;
+  --color-preston-blue-600: #020665;
+  --color-preston-blue-700: #01044b;
+  --color-preston-blue-800: #01033e;
+  --color-preston-blue-900: #010231;
+  --color-preston-blue: #020665;
+}

@@ -1,16 +1,397 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import LocationMap from '../components/LocationMap.jsx';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Preston Speaking Club - Toastmasters">
+	<Header />
+
+	<!-- Hero Section -->
+	<section class="relative min-h-screen flex items-center justify-center px-4 bg-preston-blue text-white overflow-hidden">
+		<!-- Video Background -->
+		<video
+			autoplay
+			loop
+			muted
+			playsinline
+			class="absolute inset-0 w-full h-full object-cover"
+		>
+			<source src="/hero-video.mp4" type="video/mp4" />
+		</video>
+
+		<!-- Dark overlay for better text readability -->
+		<div class="absolute inset-0 bg-preston-blue opacity-60"></div>
+
+		<div class="container mx-auto max-w-4xl text-center relative z-10 py-20">
+			<h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+				Discover the Potential of <span class="text-yellow-300">Effective Communication</span>
+			</h1>
+			<p class="text-xl md:text-2xl mb-8 text-white">
+				Transform your speaking skills and leadership abilities at Preston Speaking Club
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a
+					href="#meetings"
+					class="bg-white text-preston-blue px-8 py-4 rounded-full font-semibold hover:bg-preston-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+				>
+					Visit a Meeting
+				</a>
+				<a
+					href="#about"
+					class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-preston-blue transition-all duration-200"
+				>
+					Learn More
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about" class="py-20 px-4 bg-white">
+		<div class="container mx-auto max-w-6xl">
+			<div class="text-center mb-12">
+				<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Preston Speaking Club</h2>
+				<div class="w-24 h-1 bg-preston-blue mx-auto"></div>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-12 items-center">
+				<div>
+					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+						We are a Toastmasters organization dedicated to empowering our members through the development of communication and leadership skills in a supportive, engaging environment.
+					</p>
+					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+						Whether you're preparing for interviews, delivering presentations, or simply want to feel more confident in social situations, Preston Speaking Club provides the perfect platform for growth.
+					</p>
+					<div class="flex items-start space-x-3 mb-4">
+						<svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+						</svg>
+						<p class="text-gray-700">All skill levels welcome - from beginners to experienced speakers</p>
+					</div>
+					<div class="flex items-start space-x-3 mb-4">
+						<svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+						</svg>
+						<p class="text-gray-700">Supportive, friendly environment focused on personal growth</p>
+					</div>
+					<div class="flex items-start space-x-3">
+						<svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+						</svg>
+						<p class="text-gray-700">Part of Toastmasters International - the world leader in communication training</p>
+					</div>
+				</div>
+
+				<div class="bg-gradient-to-br from-preston-blue-50 to-indigo-50 p-8 rounded-2xl shadow-xl">
+					<h3 class="text-2xl font-bold text-gray-900 mb-6">Who Benefits?</h3>
+					<div class="space-y-4">
+						<div class="bg-white p-4 rounded-lg shadow-sm">
+							<h4 class="font-semibold text-preston-blue mb-2">Job Seekers</h4>
+							<p class="text-gray-600">Master interview skills and present yourself with confidence</p>
+						</div>
+						<div class="bg-white p-4 rounded-lg shadow-sm">
+							<h4 class="font-semibold text-preston-blue mb-2">Professionals</h4>
+							<p class="text-gray-600">Deliver compelling presentations and lead with authority</p>
+						</div>
+						<div class="bg-white p-4 rounded-lg shadow-sm">
+							<h4 class="font-semibold text-preston-blue mb-2">Anyone</h4>
+							<p class="text-gray-600">Build social confidence and communicate effectively in any setting</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Membership Benefits Section -->
+	<section id="membership" class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+		<div class="container mx-auto max-w-6xl">
+			<div class="text-center mb-12">
+				<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Join Us?</h2>
+				<div class="w-24 h-1 bg-preston-blue mx-auto mb-6"></div>
+				<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+					Unlock your potential and achieve your communication goals
+				</p>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-8">
+				<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+					<div class="w-16 h-16 bg-preston-blue-100 rounded-full flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-preston-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+						</svg>
+					</div>
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">Transform</h3>
+					<p class="text-gray-600 leading-relaxed">
+						Build confidence, develop leadership skills, and become an effective communicator through regular practice and constructive feedback.
+					</p>
+				</div>
+
+				<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+					<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">Network</h3>
+					<p class="text-gray-600 leading-relaxed">
+						Connect with like-minded individuals from diverse backgrounds and build lasting relationships in a supportive community.
+					</p>
+				</div>
+
+				<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+					<div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+						<svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+						</svg>
+					</div>
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">Grow</h3>
+					<p class="text-gray-600 leading-relaxed">
+						Advance your career with improved presentation skills, critical thinking, and the ability to lead and inspire others.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Meetings Section -->
+	<section id="meetings" class="py-20 px-4 bg-white">
+		<div class="container mx-auto max-w-6xl">
+			<div class="text-center mb-12">
+				<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Join Our Meetings</h2>
+				<div class="w-24 h-1 bg-preston-blue mx-auto"></div>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-12">
+				<div>
+					<div class="bg-gradient-to-br from-preston-blue to-preston-blue-800 text-white p-8 rounded-2xl shadow-xl mb-8">
+						<h3 class="text-2xl font-bold mb-6">Meeting Schedule</h3>
+						<div class="space-y-4">
+							<div class="flex items-start space-x-3">
+								<svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+								</svg>
+								<div>
+									<p class="font-semibold">When</p>
+									<p class="text-preston-blue-100">1st and 3rd Thursday of each month</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+								</svg>
+								<div>
+									<p class="font-semibold">Time</p>
+									<p class="text-preston-blue-100">6:30 PM - 8:45 PM</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+								</svg>
+								<div>
+									<p class="font-semibold">Location</p>
+									<p class="text-preston-blue-100">Caritas Care Plungington Community Centre</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-gray-50 p-6 rounded-xl">
+						<h4 class="font-bold text-gray-900 mb-4 flex items-center">
+							<svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Accessibility
+						</h4>
+						<p class="text-gray-700 leading-relaxed">
+							Our venue is fully accessible with wheelchair access, disabled parking, and accessible facilities. We're committed to ensuring everyone can participate comfortably.
+						</p>
+					</div>
+				</div>
+
+				<div class="bg-gray-100 rounded-2xl p-4 h-96 flex items-center justify-center">
+					<div class="text-center text-gray-500">
+						<svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+						<p class="text-sm">Venue photos placeholder</p>
+						<p class="text-xs text-gray-400 mt-2">Add images of Caritas Care Plungington Community Centre</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section -->
+	<section id="faq" class="py-20 px-4 bg-gray-50">
+		<div class="container mx-auto max-w-4xl">
+			<div class="text-center mb-12">
+				<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+				<div class="w-24 h-1 bg-preston-blue mx-auto"></div>
+			</div>
+
+			<div class="space-y-4">
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>What is Toastmasters?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						Toastmasters International is a world leader in communication and leadership development. Our members learn by speaking to groups and working with others in a supportive environment.
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>Do I need experience to join?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						No experience required! Our members range from complete beginners to experienced speakers. Everyone learns at their own pace in our supportive environment.
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>Can I visit before joining?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						Absolutely! Guests are always welcome. Visit us at any of our meetings to experience what we do. There's no obligation or pressure to speak - just come and observe.
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>How much does membership cost?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						Membership fees vary. Please contact us for current pricing information. We believe the investment in yourself is invaluable for your personal and professional development.
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>What happens at a typical meeting?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						Meetings include prepared speeches, impromptu speaking (Table Topics), evaluations, and leadership opportunities. Each meeting follows a structured agenda that provides a supportive learning environment.
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>How long does it take to see improvement?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						Many members notice improvements within their first few meetings. However, developing strong communication skills is a journey. The more you participate, the faster you'll progress.
+					</div>
+				</details>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact/Footer Section -->
+	<footer id="contact" class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16 px-4">
+		<div class="container mx-auto max-w-6xl">
+			<div class="grid md:grid-cols-3 gap-12 mb-12">
+				<div>
+					<h3 class="text-2xl font-bold mb-4">Preston Speaking Club</h3>
+					<p class="text-gray-300 leading-relaxed">
+						Transform your speaking skills and leadership abilities in a supportive community environment.
+					</p>
+				</div>
+
+				<div>
+					<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+					<ul class="space-y-2">
+						<li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+						<li><a href="#meetings" class="text-gray-300 hover:text-white transition-colors">Meetings</a></li>
+						<li><a href="#membership" class="text-gray-300 hover:text-white transition-colors">Membership</a></li>
+						<li><a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+					</ul>
+				</div>
+
+				<div>
+					<h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
+					<div class="space-y-3">
+						<a href="mailto:info@prestonspeakingclub.co.uk" class="flex items-center text-gray-300 hover:text-white transition-colors">
+							<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+								<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+								<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+							</svg>
+							Contact Us
+						</a>
+						<p class="text-gray-300 text-sm">
+							Caritas Care Plungington Community Centre<br />
+							Preston, UK
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+				<p>&copy; {new Date().getFullYear()} Preston Speaking Club. Part of Toastmasters International.</p>
+			</div>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	/* Smooth scrolling */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #020665;
+		border-radius: 5px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #01044b;
+	}
+
+	/* Fade-in animation for sections */
+	section {
+		animation: fadeIn 0.6s ease-in;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>
