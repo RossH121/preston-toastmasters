@@ -4,7 +4,11 @@ import Header from '../components/Header.astro';
 import LocationMap from '../components/LocationMap.jsx';
 ---
 
-<Layout title="Preston Speaking Club - Toastmasters">
+<Layout
+	title="Preston Speaking Club - Toastmasters"
+	description="Transform your speaking skills and leadership abilities at Preston Speaking Club. A Toastmasters organization dedicated to empowering members through communication development in a supportive environment."
+	url="/"
+>
 	<Header />
 
 	<!-- Hero Section -->
@@ -211,15 +215,8 @@ import LocationMap from '../components/LocationMap.jsx';
 					</div>
 				</div>
 
-				<div class="bg-gray-100 rounded-2xl p-4 h-96 flex items-center justify-center">
-					<div class="text-center text-gray-500">
-						<svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-						</svg>
-						<p class="text-sm">Venue photos placeholder</p>
-						<p class="text-xs text-gray-400 mt-2">Add images of Caritas Care Plungington Community Centre</p>
-					</div>
+				<div class="rounded-2xl overflow-hidden shadow-lg h-[450px]">
+					<LocationMap client:load />
 				</div>
 			</div>
 		</div>
@@ -236,73 +233,115 @@ import LocationMap from '../components/LocationMap.jsx';
 			<div class="space-y-4">
 				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
 					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
-						<span>What is Toastmasters?</span>
+						<span>What is Toastmasters</span>
 						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</summary>
 					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
-						Toastmasters International is a world leader in communication and leadership development. Our members learn by speaking to groups and working with others in a supportive environment.
+						<p class="mb-4">Toastmasters is an international organisation that helps people develop their public speaking and leadership skills through a network of local clubs that follow a program of regular meetings, speeches, and evaluations.</p>
+						<a href="https://www.toastmasters.org" class="text-preston-blue hover:underline font-semibold">Find out more</a>
 					</div>
 				</details>
 
 				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
 					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
-						<span>Do I need experience to join?</span>
+						<span>How often do Preston Speaking Club meetings take place?</span>
 						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</summary>
 					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
-						No experience required! Our members range from complete beginners to experienced speakers. Everyone learns at their own pace in our supportive environment.
+						Meetings for Preston Speaking Club are held every 1st and 3rd Thursday of the month. We arrive at 6:30 and the meeting runs from 7:00pm to 8:45pm.
 					</div>
 				</details>
 
 				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
 					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
-						<span>Can I visit before joining?</span>
+						<span>Where is the nearest car park?</span>
 						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</summary>
 					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
-						Absolutely! Guests are always welcome. Visit us at any of our meetings to experience what we do. There's no obligation or pressure to speak - just come and observe.
+						There is plenty of free parking near the community centre off Plungington Road on Hammond Street, Preston, PR1 7EN.
 					</div>
 				</details>
 
 				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
 					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
-						<span>How much does membership cost?</span>
+						<span>Is the community centre wheelchair accessible?</span>
 						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</summary>
 					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
-						Membership fees vary. Please contact us for current pricing information. We believe the investment in yourself is invaluable for your personal and professional development.
+						Yes, Plungington Community Centre is wheelchair friendly. We prioritise inclusivity and accessibility for all our guests and club members. The centre features ramp access, wide doorways, and wheelchair-accessible restrooms to ensure a comfortable experience for wheelchair users. If you have any specific needs or concerns, please feel free to contact us.
 					</div>
 				</details>
 
 				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
 					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
-						<span>What happens at a typical meeting?</span>
+						<span>Do I need to pay if I just want to visit a meeting as a guest?</span>
 						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</summary>
 					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
-						Meetings include prepared speeches, impromptu speaking (Table Topics), evaluations, and leadership opportunities. Each meeting follows a structured agenda that provides a supportive learning environment.
+						<p class="mb-4">No. We encourage anyone who just wants to try it out as a guest to come as many times as they like for free. Please feel free to reserve a spot for our next meeting.</p>
+						<a href="#meetings" class="text-preston-blue hover:underline font-semibold">Join us</a>
 					</div>
 				</details>
 
 				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
 					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
-						<span>How long does it take to see improvement?</span>
+						<span>What can I expect at a meeting?</span>
 						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</summary>
 					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
-						Many members notice improvements within their first few meetings. However, developing strong communication skills is a journey. The more you participate, the faster you'll progress.
+						<p class="mb-3">When you arrive at a meeting, you will be warmly welcomed and introduced to club members. The start of the meeting is a casual opportunity to network and get to know other guests or members of the club.</p>
+						<p class="mb-3">The meeting is structured in three parts. First, there will be "Table Topics" which are short impromptu speaking opportunities for both guests and members. As a guest, we encourage you to tackle any fears and try your hand at a "Table Topic," but you can also choose to just observe if you don't feel ready.</p>
+						<p class="mb-3">After a short break, the second part of the evening will be an opportunity for club members to present their prepared speeches. These speeches are longer speaking opportunities, and each one is tailored to the speaker's chosen speaking path.</p>
+						<p>Finally, the last part of the meeting is for evaluations, where each speaker of the evening will receive feedback highlighting their strengths as well as areas for improvement so they can continue to grow in their abilities as an effective speaker.</p>
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>How do I become a member of Preston Speaking Club?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						Becoming member of the club is easy. Come as a guest for free to any meeting and ask for the Vice President of Memberships who will guide you through the membership application process.
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>What benefits do I receive once I become a member?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						Joining a Toastmasters club means developing your public speaking and leadership skills, building your confidence, and getting valuable feedback on your speeches. Preston Speaking Club members have the opportunity to book in prepared speeches at club meetings, and get access to Toastmasters International educational resources to follow a personalised speaking pathway tailored to their own goals.
+					</div>
+				</details>
+
+				<details class="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+					<summary class="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex items-center justify-between">
+						<span>How can I find out more about Preston Speaking Club?</span>
+						<svg class="w-5 h-5 text-preston-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 text-gray-600 leading-relaxed">
+						<p class="mb-4">The best way to learn more about the club is to visit a meeting as a guest so see how meetings work first-hand. If you'd like to ask us a question don't hesitate to get in touch.</p>
+						<a href="#contact" class="text-preston-blue hover:underline font-semibold">Get in Touch</a>
 					</div>
 				</details>
 			</div>

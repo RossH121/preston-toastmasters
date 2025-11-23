@@ -1,0 +1,73 @@
+---
+/**
+ * Structured Data Component
+ * Provides JSON-LD schema markup for better search engine understanding
+ * Includes Organization and LocalBusiness schemas
+ */
+
+const siteUrl = 'https://prestonspeakingclub.co.uk';
+
+// Organization Schema
+const organizationSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: 'Preston Speaking Club',
+	description: 'A Toastmasters organization dedicated to empowering members through communication and leadership skills development',
+	url: siteUrl,
+	logo: `${siteUrl}/Preston Speaking Club Logo - no bg.png`,
+	sameAs: [
+		'https://www.facebook.com/people/Preston-Speaking-Club/100089946980802/',
+		'https://www.instagram.com/prestonspeakingclub/',
+	],
+	contactPoint: {
+		'@type': 'ContactPoint',
+		email: 'info@prestonspeakingclub.co.uk',
+		contactType: 'General Inquiries',
+	},
+};
+
+// LocalBusiness Schema
+const localBusinessSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	'@id': `${siteUrl}#organization`,
+	name: 'Preston Speaking Club',
+	image: `${siteUrl}/Preston Speaking Club Logo - no bg.png`,
+	description: 'Toastmasters club helping members develop communication and leadership skills',
+	url: siteUrl,
+	telephone: '',
+	email: 'info@prestonspeakingclub.co.uk',
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress: 'Caritas Care Plungington Community Centre, Brook Street',
+		addressLocality: 'Preston',
+		postalCode: 'PR1 7NB',
+		addressCountry: 'GB',
+	},
+	geo: {
+		'@type': 'GeoCoordinates',
+		latitude: 53.7703,
+		longitude: -2.7105,
+	},
+	openingHoursSpecification: [
+		{
+			'@type': 'OpeningHoursSpecification',
+			dayOfWeek: 'Thursday',
+			opens: '18:30',
+			closes: '20:45',
+			description: '1st and 3rd Thursday of each month',
+		},
+	],
+	sameAs: [
+		'https://www.facebook.com/people/Preston-Speaking-Club/100089946980802/',
+		'https://www.instagram.com/prestonspeakingclub/',
+	],
+	priceRange: '$$',
+};
+---
+
+<!-- Organization Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+<!-- LocalBusiness Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />

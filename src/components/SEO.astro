@@ -1,0 +1,71 @@
+---
+/**
+ * SEO Component
+ * Provides comprehensive meta tags for search engines and social media
+ * Following 2025 best practices for Astro
+ */
+
+export interface Props {
+	title: string;
+	description: string;
+	image?: string;
+	imageAlt?: string;
+	url?: string;
+	type?: 'website' | 'article' | 'profile';
+	noindex?: boolean;
+	nofollow?: boolean;
+}
+
+const {
+	title,
+	description,
+	image = '/Preston Speaking Club Logo - no bg.png',
+	imageAlt = 'Preston Speaking Club Logo',
+	url,
+	type = 'website',
+	noindex = false,
+	nofollow = false,
+} = Astro.props;
+
+// Construct full URLs
+const siteUrl = 'https://prestonspeakingclub.co.uk';
+const canonicalURL = new URL(url || Astro.url.pathname, siteUrl).href;
+const imageURL = new URL(image, siteUrl).href;
+
+// Robots directive
+const robots = [
+	noindex ? 'noindex' : 'index',
+	nofollow ? 'nofollow' : 'follow'
+].join(', ');
+---
+
+<!-- Essential Meta Tags -->
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+<meta name="robots" content={robots} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:alt" content={imageAlt} />
+<meta property="og:site_name" content="Preston Speaking Club" />
+<meta property="og:locale" content="en_GB" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+<meta name="twitter:image:alt" content={imageAlt} />
+
+<!-- Page Title -->
+<title>{title}</title>
