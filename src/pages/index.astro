@@ -1,4 +1,7 @@
 ---
+// Prerender this page as static (only API routes need server-side rendering)
+export const prerender = true;
+
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import LocationMap from '../components/LocationMap.jsx';
@@ -6,7 +9,7 @@ import LocationMap from '../components/LocationMap.jsx';
 
 <Layout
 	title="Preston Speaking Club - Toastmasters"
-	description="Transform your speaking skills and leadership abilities at Preston Speaking Club. A Toastmasters organization dedicated to empowering members through communication development in a supportive environment."
+	description="Transform your speaking skills and leadership abilities at Preston Speaking Club. A Toastmasters organisation dedicated to empowering members through communication development in a supportive environment."
 	url="/"
 >
 	<Header />
@@ -62,7 +65,7 @@ import LocationMap from '../components/LocationMap.jsx';
 			<div class="grid md:grid-cols-2 gap-12 items-center">
 				<div>
 					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
-						We are a Toastmasters organization dedicated to empowering our members through the development of communication and leadership skills in a supportive, engaging environment.
+						We are a Toastmasters organisation dedicated to empowering our members through the development of communication and leadership skills in a supportive, engaging environment.
 					</p>
 					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
 						Whether you're preparing for interviews, delivering presentations, or simply want to feel more confident in social situations, Preston Speaking Club provides the perfect platform for growth.

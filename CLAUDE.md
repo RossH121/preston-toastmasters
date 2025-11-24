@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a marketing website for Preston Speaking Club, a Toastmasters organization in Preston, UK. The site is built with Astro 5.x and uses Tailwind CSS 4.x for styling.
+This is a marketing website for Preston Speaking Club, a Toastmasters organisation in Preston, UK. The site is built with Astro 5.x and uses Tailwind CSS 4.x for styling.
 
 **Key information:**
 - Site URL: https://prestonspeakingclub.co.uk
